@@ -36,8 +36,8 @@ There are some .txt file in [example](./example/) which are the output we have r
 The output that you run by the main function will appear in [test/example](./test/example/).
 
 ## Members
-- Kanyaluck&ensp;Chimchome [(Pairfair)](https://github.com/Parefair)
+- Kanyaluck&ensp;Chimchome [(Parefair)](https://github.com/Parefair)
 - Boonyarit&ensp;Samran [(QuartzQw)](https://github.com/QuartzQw)
 - Warisara&ensp;Patib [(Cocoa2304)](https://github.com/Cocoa2304)
-- Chanidapa&ensp;Chanama [(Qandle)](https://github.com/Qandle/ProjectGA)
+- Chanidapa&ensp;Chanama [(Qandle)](https://github.com/Qandle)
 - Nontawat&ensp;Kunlayawuttipong [(nontaxim)](https://github.com/nontaxim)
