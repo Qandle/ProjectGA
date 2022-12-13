@@ -4,7 +4,7 @@ Project under CPE231@KMUTT
 
 ## Installation
 
-```console
+```bash
  pip install -r requirements.txt
  ```
 
@@ -16,11 +16,11 @@ You can read more about virtual environment at
 
 ### Main function
 windows
-```console
+```bash
  python .\genetic_algorithm\__init__.py
 ```
 mac
-```console
+```bash
  python3 .\genetic_algorithm\__init__.py
 ```
 
