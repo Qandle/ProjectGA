@@ -37,7 +37,7 @@ The output that you run bby the main function will appear in [test/example](./te
 
 ## Members
 - Kanyaluck&ensp;Chimchome [(Pairfair)](https://github.com/Parefair)
-- Boonyarit&ensp;Samran
-- Warisara&ensp;Patib
+- Boonyarit&ensp;Samran [(QuartzQw)](https://github.com/QuartzQw)
+- Warisara&ensp;Patib [(Cocoa2304)](https://github.com/Cocoa2304)
 - Chanidapa&ensp;Chanama [(Qandle)](https://github.com/Qandle/ProjectGA)
 - Nontawat&ensp;Kunlayawuttipong [(nontaxim)](https://github.com/nontaxim)
