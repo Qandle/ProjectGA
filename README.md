@@ -30,10 +30,10 @@ You can see the analytics of our GA project in  [GA Analytics](ga_analytics.ipyn
 ## Output
 
 ### Example output
-There are some .txt file in [example](./example/) which are the output we have ran. For moreover output (ex. .log files) you can see in [Output](https://mailkmuttacth-my.sharepoint.com/personal/nontawat_kunl_kmutt_ac_th/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fnontawat%5Fkunl%5Fkmutt%5Fac%5Fth%2FDocuments%2FtestCase%28%2Etxt%29%28%2Elog%29&ga=1)
+There are some .txt file in [example](./example/) which are the output we have ran. For moreover output (ex. .log files) you can see in [Output](https://mailkmuttacth-my.sharepoint.com/personal/nontawat_kunl_kmutt_ac_th/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fnontawat%5Fkunl%5Fkmutt%5Fac%5Fth%2FDocuments%2FtestCase%28%2Etxt%29%28%2Elog%29&ga=1).
 
 ### Output after run main function
-The output that you run bby the main function will appear in [test/example](./test/example/)
+The output that you run by the main function will appear in [test/example](./test/example/).
 
 ## Members
 - Kanyaluck&ensp;Chimchome [(Pairfair)](https://github.com/Parefair)
