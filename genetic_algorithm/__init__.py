@@ -1,4 +1,3 @@
-import numpy as np
 import pandas as pd
 import pprint as pp
 import math
@@ -9,43 +8,51 @@ from knapsack import init_population as ip
 start = time.time()
 
 
-CUSTOMER_MATRIX = [
-    [0.0, 0.8, 0.0, 0.9, 1.3, 1.5, 0.0, 0.0, 0.3, 0.2, 1.0, 0.0, 0.6, 0.4],
-    [0.2, 0.8, 0.3, 0.7, 0.5, 1.0, 1.0, 1.0, 2.0, 0.1, 0.1, 0.2, 0.2, 0.3],
-    [2.0, 0.2, 0.5, 0.1, 1.3, 0.1, 1.5, 1.8, 0.0, 0.0, 0.2, 0.3, 0.4, 0.4],
-    [0.5, 1.0, 1.5, 0.0, 0.2, 0.0, 0.8, 0.2, 0.0, 1.0, 0.0, 0.1, 0.5, 1.2]
-]
-
-DISTANCE_MATRIX = pd.read_csv("./data/distanceMatrix.csv", header=None)
+CUSTOMER_MATRIX = pd.read_csv("./data/customer_matrix.csv", header=None).T
+DISTANCE_MATRIX = pd.read_csv("./data/distance_matrix.csv", header=None)
+FILENAME = "testCase"
+TESTCASE = 2
 
 if __name__ == '__main__':
-    # save best gene(may > 1) for each testCase
+    # collect best chromosome(may > 1) for each testCase
     ans = []
     i = 0
     for j in range(10):
         gen = 1
         init_pop_500 = ip(DISTANCE_MATRIX, CUSTOMER_MATRIX[i])
         genX = init_pop_500
-        print(f"gen: {gen} round: {j+1}")
+        with open(f'./test/example/{FILENAME}{TESTCASE}.txt', "a") as out:
+            out.write(f'gen: {gen} round: {j+1}\n')
+            pp.pprint(genX, stream=out)
+        with open(f'./test/example/{FILENAME}{TESTCASE}.log', "a") as out:
+            out.write(f'gen: {gen} round: {j+1}\n')
+            pp.pprint(genX, stream=out)
+
 
         gen = 2
         while (criteria(genX, gen)):
-            print(f"gen: {gen} round: {j+1}")
             eliteDict, pathDict = elitism(genX)
             newGen = gen_crossover(pathDict, 94, 500, DISTANCE_MATRIX,
                                    CUSTOMER_MATRIX[i])
             mutation(newGen, DISTANCE_MATRIX, CUSTOMER_MATRIX[i], 94, 2.5, 500)
             merge(newGen, eliteDict)
             genX = newGen
+            if gen == 250 or gen == 500:
+                with open(f'./test/example/{FILENAME}{TESTCASE}.txt', "a") as out:
+                    out.write(f'gen: {gen} round: {j+1}\n')
+                    pp.pprint(genX, stream=out)
+                with open(f'./test/example/{FILENAME}{TESTCASE}.log', "a") as out:
+                    out.write(f'gen: {gen} round: {j+1}\n')
+                    pp.pprint(genX, stream=out)
             gen += 1
 
-        # save best gene(may > 1) for each round
+        # save best chromosome(may > 1) for each round
         dummy = dict()
         minDis = math.inf
         numCar = math.inf
         minPath = []
         for key, value in genX.items():
-            if minDis > key[0]:
+            if minDis > key[0] or (minDis == key[0] and numCar > key[1]) :
                 minDis = key[0]
                 numCar = key[1]
                 minPath = genX[key]
@@ -53,7 +60,7 @@ if __name__ == '__main__':
         dummy[key] = minPath
         ans.append(dummy.copy())
 
-    # save best gene(may > 1) for each round
+    # save best chromosome(may > 1) for each round
     for k in range(10):
         print("best for round:", k+1, "testCase:", i+1)
         pp.pprint(ans[k])
