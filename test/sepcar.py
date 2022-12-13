@@ -7,7 +7,7 @@ customer_matrix = [[0.0, 0.8, 0.0, 0.9, 1.3, 1.5, 0.0, 0.0, 0.3, 0.2, 1.0, 0.0, 
                  [2.0, 0.2, 0.5, 0.1, 1.3, 0.1, 1.5, 1.8, 0.0, 0.0, 0.2, 0.3, 0.4, 0.4],
                  [0.5, 1.0, 1.5, 0.0, 0.2, 0.0, 0.8, 0.2, 0.0, 1.0, 0.0, 0.1, 0.5, 1.2]]
 
-distance_matrix = pd.read_csv("data/distanceMatrix.csv", header = None)
+distance_matrix = pd.read_csv("./data/distance_matrix.csv", header = None)
 
 
 class car(object):
@@ -51,14 +51,21 @@ class garage(object):
     self.amount = amount_car
     self.value = value
     self.total_dis = toldis
+    self.cars = cars
 
   def population(self):
     return (self.total_dis, self.amount, self.value)
+  
+  def __repr__(self) -> str:
+        return f'distance: {self.total_dis} | car amount: {self.amount} | path: {self.value}'
+
+  def __str__(self) -> str:
+      return f'distance: {self.total_dis} \ncar amount: {self.amount} \npath: {self.cars}'
     
 b = [2, 4]
 print( car(b, distance_matrix) )
 # a = [9, 2, 4, 11, 14, 5, 6, 13, 10]
 # a = [2, 4, 5, 9, 11, 14, 6, 13, 10]
-# a = [10, 12, 3, 14, 8, 1, 7, 2, 5, 13]
+a = [10, 12, 3, 14, 8, 1, 7, 2, 5, 13]
 testCase = 4
-# print( garage(a, distance_matrix, customer_matrix[testCase-1]).population() )
+print( garage(a, distance_matrix, customer_matrix[testCase-1]) )
